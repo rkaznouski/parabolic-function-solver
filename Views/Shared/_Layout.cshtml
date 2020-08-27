@@ -1,0 +1,38 @@
+﻿@model UserData
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="~/css/normalize.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+    <script src="~/js/plotly.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Quadratic Function Solver</h1>
+    </header>
+    <main>
+        <div class="wrapper">
+            <div class="container">
+                <div class="box1">
+                    <h3>Quadratic function</h3>
+                    @RenderSection("Form")
+                    <button id="button">Solve!</button>
+                </div>
+                <div class="box2">
+                    <div id="result"></div>
+                    <canvas id="myChart" height="600" width="700"></canvas>
+                    Click <a asp-action="ListUserData">here</a> to see your data
+                    <div id="tester" style="width:100%;"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+    <script src="~/js/quadraticFunction.js"></script>
+</body>
+</html>
+

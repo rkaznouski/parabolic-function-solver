@@ -1,0 +1,15 @@
+﻿@model UserData
+@{ Layout = "_Layout";}
+
+@section Form
+    {
+    <p><strong>a</strong>x^2 + <strong>b</strong>x + <strong>c</strong></p>
+    <form>
+        <span>a</span>
+        <input asp-for="A" id="first_value" type="number" name="a"><br>
+        <span>b</span>
+        <input asp-for="B" id="second_value" type="number" name="b"><br>
+        <span>c</span>
+        <input asp-for="C" id="third_value" type="number" name="c"><br>
+    </form>
+    }
