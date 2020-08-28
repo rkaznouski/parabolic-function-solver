@@ -24,6 +24,10 @@ namespace ParabolicFunction.Models
         {
             return context.UserDatas;
         }
+        public IEnumerable<Point> GetAllPoints()
+        {
+            return context.Points.Include(u => u.Chart);    //
+        }
         public void Add(UserData userData)
         {
             userData.Id = 0;

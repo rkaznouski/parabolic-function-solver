@@ -5,6 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ParabolicFunction.Models;
+using Microsoft.EntityFrameworkCore.Internal;
+
 
 namespace ParabolicFunction.Controllers
 {
@@ -34,8 +36,8 @@ namespace ParabolicFunction.Controllers
         }
         public IActionResult ListUserData()
         {
-           var userDatas = repository.GetAllUserData();
-           return View(userDatas);
+            var userDatas = repository.GetAllUserData();
+            return View(userDatas);
         }
     }
 }
