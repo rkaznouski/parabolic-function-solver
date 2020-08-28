@@ -31,26 +31,25 @@ namespace ParabolicFunction.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    ChartID = table.Column<int>(nullable: false),
                     PointX = table.Column<int>(nullable: false),
                     PointY = table.Column<int>(nullable: false),
-                    UserDataId = table.Column<int>(nullable: true)
+                    ChartId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Points", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Points_UserDatas_UserDataId",
-                        column: x => x.UserDataId,
+                        name: "FK_Points_UserDatas_ChartId",
+                        column: x => x.ChartId,
                         principalTable: "UserDatas",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Points_UserDataId",
+                name: "IX_Points_ChartId",
                 table: "Points",
-                column: "UserDataId");
+                column: "ChartId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
