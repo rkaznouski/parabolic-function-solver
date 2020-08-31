@@ -7,3 +7,4 @@ For the project to work, you need to install nugget packages:
 # Chart.js
 # Microsoft.Extensions.DependencyInjection.Abstractions
 # Microsoft.AspNetCore.App
+# Microsoft.EntityFrameworkCore
